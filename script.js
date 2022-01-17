@@ -53,11 +53,16 @@ function createUserList(usersList){
 searchInput.addEventListener("input", filterData)
 
 function filterData(e) {
+
     searchResult.innerHTML = ""
 
-    const searchedString = e.target.value.toLowerCase();
+    const searchedString = e.target.value.toLowerCase().replace(/\s/g, "");
 
-    const filteredArr = dataArray.filter(el => el.name.first.toLowerCase().includes(searchedString) || el.name.last.toLowerCase().includes(searchedString))
-    
+    const filteredArr = dataArray.filter(el => 
+    el.name.first.toLowerCase().includes(searchedString) || 
+    el.name.last.toLowerCase().includes(searchedString) ||
+    `${el.name.last + el.name.first}`.toLowerCase().replace(/\s/g, "").includes(searchedString) ||
+    `${el.name.first + el.name.last}`.toLowerCase().replace(/\s/g, "").includes(searchedString)
+    )
     createUserList(filteredArr)
 }
