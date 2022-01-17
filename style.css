@@ -104,6 +104,8 @@ body {
 
 .main-title {
   margin: 30px 0;
+  font-size: 50px;
+  text-align: center;
 }
 
 /* Table */
