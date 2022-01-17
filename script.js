@@ -9,7 +9,7 @@ async function getUsers(){
     const {results}  = await res.json()
     
     dataArray = orderList(results)
-
+    createUserList(dataArray)
 }
 
 getUsers();
@@ -27,4 +27,25 @@ function orderList(data){
         })
 
     return orderedData;
+}
+
+function createUserList(usersList){
+
+    usersList.forEach(user => {
+        const listItem = document.createElement("div");
+        listItem.setAttribute("class", "table-item");
+
+        listItem.innerHTML = `
+        <div class="container-img">
+            <img src=${user.picture.medium}>
+             <p>${user.name.last} ${user.name.first}</p>
+        </div>
+        <p class="email">${user.email}</p>
+        <p class="phone">${user.phone}</p>
+        </div>
+        `
+
+        searchResult.appendChild(listItem);
+    })
+
 }
