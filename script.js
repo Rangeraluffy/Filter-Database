@@ -57,7 +57,7 @@ function filterData(e) {
 
     const searchedString = e.target.value.toLowerCase();
 
-    const filteredArr = dataArray.filter(el => el.name.first.toLowerCase().includes(searchedString) || el.name.first.toLowerCase().includes(searchedString))
+    const filteredArr = dataArray.filter(el => el.name.first.toLowerCase().includes(searchedString) || el.name.last.toLowerCase().includes(searchedString))
     
     createUserList(filteredArr)
 }
