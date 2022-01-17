@@ -66,6 +66,38 @@ body {
   font-weight: 600;
 }
 
+/* Main */
+
+.main-content {
+  grid-column: 2;
+  padding: 30px;
+}
+
+.input-control {
+  display: flex;
+  align-items: center;
+  max-width: 450px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.input-control img {
+  width: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.input-control input {
+  width: 100%;
+  font-size: 18px;
+  padding-left: 10px;
+  outline: 0;
+  border: 0;
+  color: #000;
+  background-color: #f4f4f4;
+}
+
 img {
   width: 25px;
 }
