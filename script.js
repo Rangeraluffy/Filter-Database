@@ -49,3 +49,15 @@ function createUserList(usersList){
     })
 
 }
+
+searchInput.addEventListener("input", filterData)
+
+function filterData(e) {
+    searchResult.innerHTML = ""
+
+    const searchedString = e.target.value.toLowerCase();
+
+    const filteredArr = dataArray.filter(el => el.name.first.toLowerCase().includes(searchedString) || el.name.first.toLowerCase().includes(searchedString))
+    
+    createUserList(filteredArr)
+}
